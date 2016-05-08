@@ -6,8 +6,12 @@
 
 Install libraries:
 
-  apt-get install libxslt1-dev libxml2-dev python-dev
+  make dep
 
 Install requirements:
 
-  pip install -r requirements.txt
+  make req
+
+Test:
+
+  make
