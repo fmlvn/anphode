@@ -20,11 +20,4 @@ class Restaurant(db.Model):
         self.open_close = open_close
 
     def __repr__(self):
-        restaurant = {}
-        restaurant['id'] = self.id
-        restaurant['name'] = self.name
-        restaurant['address'] = self.address
-        restaurant['price'] = self.price
-        restaurant['ratings'] = self.ratings
-        restaurant['open_close'] = self.open_close
-        return str(restaurant)
+        return self.name

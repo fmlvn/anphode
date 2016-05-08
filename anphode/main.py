@@ -16,7 +16,7 @@ def hello():
     return "Hello World!"
 
 
-api_.add_resource(api.RestaurantAPI, '/cuahang/')
+api_.add_resource(api.RestaurantAPI, '/restaurant/')
 db.db.init_app(app)
 
 if __name__ == "__main__":
