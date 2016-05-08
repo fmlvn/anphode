@@ -12,7 +12,13 @@ class PcrawlerItem(Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     name = Field()
-    address = Field()
+    street = Field()
+    district = Field()
+    city = Field()
     open_time = Field()
+    close_time = Field()
     price = Field()
     point = Field()
+    lat = Field()
+    lon = Field()
+
