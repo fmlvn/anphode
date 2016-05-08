@@ -11,8 +11,7 @@ class Restaurant(db.Model):
     ratings = db.Column(db.String())
     open_close = db.Column(db.String())
 
-    def __init__(self, id, name, address, price, ratings, open_close):
-        self.id = id
+    def __init__(self, name, address, price, ratings, open_close):
         self.name = name
         self.address = address
         self.price = price
