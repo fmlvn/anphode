@@ -4,8 +4,6 @@ python:
 cache: pip
 
 # command to install dependencies
-install:
-  - "pip install -r requirements.txt"
-  - "pip install flake8"
+install: "make req"
 # command to run tests
-script: flake8 pcrawler/pcrawler/spiders/ anphode/
+script: make
