@@ -14,9 +14,9 @@ class FoodySpider(scrapy.Spider):
 
     def parse(self, response):
         # Get the next page and yield Requests
-        for url in ['https://www.foody.vn/ha-noi/dia-diem?ds=Restaurant&vt=row\
-                    &st=1&q=ph%E1%BB%9F&dt=undefined&page={0}&provinceId=218\
-                    &categoryId=null&append=true'.format(count)
+        for url in ['https://www.foody.vn/ha-noi/dia-diem?ds=Restaurant&vt=row'
+                    '&st=1&q=ph%E1%BB%9F&dt=undefined&page={0}&provinceId=218'
+                    '&categoryId=null&append=true'.format(count)
                     for count in range(1, 444)]:
             yield Request(url)
 
