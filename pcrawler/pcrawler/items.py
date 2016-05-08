@@ -6,9 +6,13 @@
 # http://doc.scrapy.org/en/latest/topics/items.html
 
 import scrapy
+from scrapy import Item, Field
 
-
-class PcrawlerItem(scrapy.Item):
+class PcrawlerItem(Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    name = Field()
+    address = Field()
+    open_time = Field()
+    price = Field()
+    point = Field()
