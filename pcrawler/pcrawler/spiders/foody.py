@@ -39,6 +39,8 @@ class FoodySpider(scrapy.Spider):
                                           'span[3]/a/text()').extract()[0]
         item['city'] = response.xpath('//div[@class="res-common-add"]/'
                                       'span[4]/text()').extract()[0]
+        item['address'] = ' '.join([item['street'], item['district'],
+                                   item['city']])
         try:
             item['close_time'] = response.xpath('*//span[@style="margin-left: '
                                                 '5px;"]/span/span[2]/text()'
@@ -59,8 +61,13 @@ class FoodySpider(scrapy.Spider):
             item['close_time'] = ''
             item['open_time'] = ''
             item['price'] = ''
-        item['point'] = response.xpath('*//div[@class="ratings-boxes-points"]'
-                                       '/div/span/b/text()').extract()[0]
+
+        item['open_close'] = ' - '.join([item['open_time'],
+                                        item['close_time']])
+        item['ratings'] = response.xpath(
+            '*//div[@class="ratings-boxes-points"]'
+            '/div/span/b/text()'
+        ).extract()[0]
         item['lat'] = response.xpath('//meta[@property='
                                      '"place:location:latitude"]/@content'
                                      ).extract()[0]
